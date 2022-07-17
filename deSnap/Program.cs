@@ -6,22 +6,16 @@
         {
            
             string path = @"PGTA5134690640";
-            byte[] readText = File.ReadAllBytes(path);
+            byte[] readFile = File.ReadAllBytes(path);
 
-            List<byte> converted = new List<byte>(readText);
-            Console.WriteLine(converted.Count);
-            for (int i = 0; i < 292; i++)
-            {
-                converted.RemoveAt(i);
-            }
-            Console.WriteLine(converted.Count);
-            /*
-            foreach (byte s in converted)
-            {
-                Console.WriteLine(s);
-            }
-            */
-            System.IO.File.WriteAllBytes("testOld.txt", converted.ToArray());
+            byte[] output = new byte[527900];
+            Array.Copy(readFile, 292, output, 0, 527900);
+
+            System.IO.File.WriteAllBytes("image.jpeg", output);
+
+            Console.WriteLine("Conversion was successful!. Your images are in the $PATH"); //add path later
+            Console.WriteLine("Press any key to exit.");
+
         }
     }
 }
