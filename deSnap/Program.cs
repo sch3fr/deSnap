@@ -9,7 +9,6 @@
             path = path + @"\Rockstar Games\GTA V\Profiles";
             string[] dirs = Directory.GetDirectories(path);
             path = dirs[0]; 
-
             //Code above finds users Documents folder, gets into GTA V folders and finds the path of randomly generated number folder
 
             DirectoryInfo taskDirectory = new DirectoryInfo(path);

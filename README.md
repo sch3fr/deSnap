@@ -1,26 +1,22 @@
 # deSnap
 deSnap is a Windows tool in development that aims to extract .JPGs from the Snapmatic game feature in GTA Online.
-## How is it gonna work?
-The coded files are located in C:\Users\USERNAME\Documents\Rockstar Games\GTA V\Profiles\ <br>
+## How does it work?
+The coded files are located in C:\Users\USERNAME\Documents\Rockstar Games\GTA V\Profiles\CODE\ <br>
+USERNAME being your user name (duh) and CODE being a random code named folder inside of the Profiles directory.<br>
 There should be some files that we don't care about, and the Snapmatic photos, saved as files 
-without any extension, starting with PGTA5, followed by some numbers. According to 
+without any extension, starting with PGTA5, followed by a string of numbers. According to 
 [this user on gtaforums.com](https://gtaforums.com/topic/785078-snapmatic-shots/?do=findComment&comment=1067312665). 
 the files are image files with 292 bytes of header data. This is verifiable by 
 opening the file in a Hex editor and manually deleting the bytes. 
-This tool is going to read the binary of the files, delete the header data, and 
-save it as .JPG.
+This tool finds its path to the right folder, selects the correct files, and one by one it strips each file of the
+unwanted bytes. Then it exports all of the pictures to a new folder on users desktop. Simple as that. You don't 
+need to manually input anything, or look for the right folders.
 ## What's the current state
-~~As of today I was able to read a binary of a photo file, changing "something" and saving the file again. The thig is, the change the program make is not desirable. When 
-deleting the first 292 bytes of the photo file in Hex editor, I was able to get my picture. 
-However the binary output of my program is different to the binary output of the Hex editor, 
-making the output files of this program unreadable.~~
-The imported file is now edited by saving the binary data of original file to an array and 
-copying important data to a new array. The program then exports the new array to a .JPEG. Now 
-I need to add the functionality to import and export multiple files at once, as you can see 
-on the roadmap.
+The program seems to be working fine. The naming of the output files is kinda wonky, I might have to change that later.
+I have yet to test it somewhere other than my computer.
 ## Roadmap
 - [x] Sucessfully load a file
 - [x] Sucessfully export a file
-- [ ] Load multiple files in single run
-- [ ] Export all the files in single run
-- [ ] Do some Path magic so the user doesn't have to move any files around 
+- [x] Load multiple files in single run
+- [x] Export all the files in single run
+- [x] Do some Path magic so the user doesn't have to move any files around 
