@@ -1,0 +1,15 @@
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Release\net6.0\deSnap.exe
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Release\net6.0\deSnap.deps.json
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Release\net6.0\deSnap.runtimeconfig.json
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Release\net6.0\deSnap.dll
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Release\net6.0\deSnap.pdb
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.csproj.AssemblyReference.cache
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.AssemblyInfoInputs.cache
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.AssemblyInfo.cs
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.csproj.CoreCompileInputs.cache
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.dll
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\refint\deSnap.dll
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.pdb
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\deSnap.genruntimeconfig.cache
+C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\obj\Release\net6.0\ref\deSnap.dll
