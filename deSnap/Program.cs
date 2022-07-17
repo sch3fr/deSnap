@@ -4,25 +4,34 @@
     {
         static void Main(string[] args)
         {
-            DirectoryInfo taskDirectory = new DirectoryInfo(@"C:\Users\sch3f\Repos\GitHub\deSnap\deSnap\bin\Debug\net6.0"); //IMPORTANT TO CHANGE LATER TO A CORRECT PATH
-            FileInfo[] taskFiles = taskDirectory.GetFiles("PGTA5*");
-            foreach (FileInfo file in taskFiles)
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); 
+            path = path + @"\Rockstar Games\GTA V\Profiles";
+            string[] dirs = Directory.GetDirectories(path);
+            path = dirs[0]; 
+
+            //Code above finds users Documents folder, gets into GTA V folders and finds the path of randomly generated number folder
+
+            DirectoryInfo taskDirectory = new DirectoryInfo(path);
+            FileInfo[] taskFiles = taskDirectory.GetFiles("PGTA5*");  //looks for files that contain the PGTA5* string, adds them to an array
+            int stop = taskFiles.Length; //finds the lenght of taskFiles array for later usage
+            int counter = 0; //counter for moving throuhg the files and naming purposes
+
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\deSnap"; //desktop path
+            DirectoryInfo dir = Directory.CreateDirectory(desktop); //creates the deSnap folder on Desktop
+
+            for (int i = 0; i < stop; i++)
             {
-                Console.WriteLine(file.Name);
+                byte[] readFile = File.ReadAllBytes(taskFiles[counter].FullName); //converts the file in taskFiles array to new byte array
+
+                byte[] output = new byte[527900]; //new array with wanted length without the header data
+                Array.Copy(readFile, 292, output, 0, 527900); //copies the relevant data from original array to new one
+
+                string fileName = "Snapmatic" + counter + ".jpeg"; //output file naming
+                System.IO.File.WriteAllBytes(desktop + @"\deSnap" + fileName, output); //acuall file outputs
+                counter++;
             }
-            
-            string path = @"PGTA5134690640";
-            byte[] readFile = File.ReadAllBytes(path); //converts the file in PATH to byte array
-
-            byte[] output = new byte[527900]; //new output array
-            Array.Copy(readFile, 292, output, 0, 527900); //copies the relevant data from original array to new one
-
-            int fileNum = 1;
-            string fileName = "Snapmatic" + fileNum.ToString() + ".jpeg"; //output file name
-
-            System.IO.File.WriteAllBytes(fileName, output);
-
-            Console.WriteLine("Conversion was successful!. Your images are in the $PATH"); //add path later
+            Console.WriteLine("Sucessfuly converted {0} images!. Your images are in a folder on your Desktop", counter);
             Console.WriteLine("Press any key to exit.");
         }
     }
